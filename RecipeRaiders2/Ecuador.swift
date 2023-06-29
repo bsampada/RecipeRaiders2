@@ -12,9 +12,9 @@ struct Ecuador: View {
     let beige = Color(red: 0.941, green: 0.827, blue: 0.725)
     let forestGreen = Color(red: 0, green: 0.2, blue: 0.125)
     let blue = Color(red: 0.757, green: 0.816, blue:0.906)
-    let momosIngredients = ["2 cup of minced meat", "1 grated onion", "Some finely chopped coriander", "2 tablespoons of ginger paste", "2 tablespoons of garlic paste", "Half a tablespoon of coriander powder", "Half a tablespoon of turmeric", "Half a tablespoon of cumin powder", "2 tablespoons of grated chilli", "2 tablespoons of vegetable oil", "2 tablespoons of salt", "4.25 cups of flour"]
-    let momosDirections = ["1. To prepare the filling:                                           - Mix the onion, turmeric powder, salt, grated chilli, ginger and garlic paste, coriander powder together.                                                                  - Add 2 tablespoons of vegetable oil and mix it again.                                                                               - Add finely chopped coriander and mix.", "2. To make the wrappers:                                                                       - Put the flour into a bowl.                                                                              - Add water a little at a time to the flour to make dough.                                                                             - Knead the dough for a few more minutes.                                  - Pinch off a bit of the dough.                                  - With a rolling pin roll the dough as thin as possible into circular shapes.", "3. To pack the momos:                                                                             - Put around one tablespoon of the filling into the centre of the wrapping.                                           - Pinch one edge of the wrapping to the other edge then twist it.                                                                             - Keep doing this until the filling is covered.", "4. To cook the momos:                                                                             - Oil the bottom of the steamer (prevents the momos from sticking.)                                                                             - Put the momos in a systematic order so that they don’t touch each other.                                  - Steam for 20 – 30 mins."]
-    let momosSources = ["                                                                                  Recipe: https://www.foodpleasureandhealth.com/blog/2020/8/6/5-momo-achar-recipes                                           ", "                                                                                  Image: https://unsplash.com/photos/LR559Dcst70                 "]
+    let locroIngredients = ["10 medium sized potatoes (peeled and chopped into small and large pieces)", "2 tablespoons oil", "1 diced white onion", "2 minced garlic cloves", "2 tsp cumin", "1 tsp achiote powder", "7 cups of water", "1 cup of milk (or more)", "1 cup grated or crumbled cheese quesillo, queso fresco, mozzarella or monterey jack", "1 bunch of minced cilantro leaves only", "Salt to taste", "1 cup of queso fresco feta cheese, or grated mozzarella","Maiz tostado or cancha corn nuts", "Chopped cilantro and green onions", "Sliced or diced avocados", "Ecuadorian tree aji hot sauce"]
+    let locroDirections = ["1. Prepare a base for the soup by heating the oil over medium heat in a large soup pot.", "2. Add the diced onions, minced garlic cloves, cumin, and achiote powder to the pot.", "3. Cook, stirring frequently, until the onions are tender (about 5 minutes).", "4. Add the potatoes to the pot and mix until they are coated with the refrito. Cook for about 5 minutes, stirring a every couple of minutes.", "6. Add the water and bring it to a boil and cook until the potatoes are very tender.", "7. Use a potato masher to mash the potatoes in the pot, don’t mash all of them, the consistency of the soup should be creamy with small tender chunks of potatoes.", "8. Turn the heat down to low, stir in the milk and let cook for about 5 more minutes. You can add more milk if the soup is too thick.", "9. Add salt to taste, the grated cheese and cilantro. Mix well and remove the soup from the heat.", "10. You can serve the locro de papa warm with the avocados, scallions, queso or feta cheese and aji hot sauce."]
+    let locroSources = ["                                                                                  Recipe: https://www.laylita.com/recipes/locro-de-papa-creamy-potato-soup-with-cheese/                                     ", "                                                                                  Image: https://www.cocina-ecuatoriana.com/recetas/sopas/locro-ecuatoriano"]
     var body: some View {
       ZStack {
         green.ignoresSafeArea()
@@ -61,8 +61,8 @@ struct Ecuador: View {
                 .foregroundColor(blue))
               .cornerRadius(30)
               .padding()
-            VStack() {
-              ForEach(momosIngredients, id: \.self) { ingredient in
+              VStack(spacing: 20) {
+              ForEach(locroIngredients, id: \.self) { ingredient in
                 Text(ingredient)
                   .font(.body)
                   .foregroundColor(forestGreen)
@@ -86,7 +86,7 @@ struct Ecuador: View {
             .cornerRadius(30)
             .padding()
           VStack(spacing: 20) {
-            ForEach(momosDirections, id: \.self) { direction in
+            ForEach(locroDirections, id: \.self) { direction in
               Text(direction)
                 .font(.body)
                 .fontWeight(.regular)
@@ -107,7 +107,7 @@ struct Ecuador: View {
             .cornerRadius(30)
             .padding()
           VStack(spacing: 20) {
-            ForEach(momosSources, id: \.self) { direction in
+            ForEach(locroSources, id: \.self) { direction in
               Text(direction)
                 .font(.body)
                 .fontWeight(.regular)
@@ -118,17 +118,19 @@ struct Ecuador: View {
           .background(Rectangle()
             .foregroundColor(beige))
           .cornerRadius(40)
-          NavigationLink(destination: ContentView()) {
-            Text("Main Menu")
-              .font(.body)
-              .foregroundColor(forestGreen)
-              .fontWeight(.regular)
-              .padding()
-              .background(Rectangle()
-                .foregroundColor(blue))
-              .cornerRadius(30)
-              .padding()
-          }
+          
+            
+//            NavigationLink(destination: ContentView()) {
+//            Text("Main Menu")
+//              .font(.body)
+//              .foregroundColor(forestGreen)
+//              .fontWeight(.regular)
+//              .padding()
+//              .background(Rectangle()
+//                .foregroundColor(blue))
+//              .cornerRadius(30)
+//              .padding()
+//          }
         }
       }
     }
