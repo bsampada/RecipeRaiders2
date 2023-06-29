@@ -43,7 +43,7 @@ struct Ecuador: View {
               .background(Rectangle()
                 .foregroundColor(blue))
               .cornerRadius(30)
-            Text("insert locro history here")
+            Text("Locro de papa is an Ecuadorian dish that originates from the highlands of the Andes mountains and is usually served as the first course.")
               .font(.body)
               .foregroundColor(forestGreen)
               .fontWeight(.regular)
