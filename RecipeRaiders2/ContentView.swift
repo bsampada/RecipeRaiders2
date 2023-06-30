@@ -13,7 +13,14 @@ struct ContentView: View {
     let forestGreen = Color(red: 0, green: 0.2, blue: 0.125)
     let blue = Color(red: 0.757, green: 0.816, blue:0.906)
     @State private var query = ""
-//    @State private var btn1visibility
+    @State private var isLocked1 = false
+    @State private var check1 = "✅"
+    @State private var isLocked2 = false
+    @State private var check2 = "✅"
+    @State private var isLocked3 = false
+    @State private var check3 = "✅"
+    @State private var isLocked4 = false
+    @State private var check4 = "✅"
     @State var count: Int = 0
     var body: some View {
         NavigationStack {
@@ -42,12 +49,21 @@ struct ContentView: View {
                         .cornerRadius(25)
                         .padding(.horizontal)
                         HStack() {
-                            Button("✅") {
-                                self.count += 5
+                            Button(check1) {
+                                if self.isLocked1 {
+                                    self.count -= 5
+                                    self.check1 = "✅"
+                                } else {
+                                    self.count += 5
+                                    self.check1 = "    "
+                                }
+                                self.isLocked1.toggle()
                             }
                             .buttonStyle(.borderedProminent)
-                            .tint(blue)
-                            .foregroundColor(forestGreen)
+                            .tint(isLocked1 == true ? .gray : blue)
+                            .frame(
+                                width: 50
+                            )
                             NavigationLink(destination: SecondView()) {
                                 Text("🇳🇵   Nepal   🇳🇵")
                                     .font(.largeTitle)
@@ -67,12 +83,21 @@ struct ContentView: View {
                         )
                         .padding()
                         HStack() {
-                            Button("✅") {
-                                self.count += 5
+                            Button(check2) {
+                                if self.isLocked2 {
+                                    self.count -= 5
+                                    self.check2 = "✅"
+                                } else {
+                                    self.count += 5
+                                    self.check2 = "    "
+                                }
+                                self.isLocked2.toggle()
                             }
                             .buttonStyle(.borderedProminent)
-                            .tint(blue)
-                            .foregroundColor(forestGreen)
+                            .tint(isLocked2 == true ? .gray : blue)
+                            .frame(
+                                width: 50
+                            )
                             NavigationLink(destination: Ecuador()) {
                                 Text("🇪🇨   Ecuador   🇪🇨")
                                     .font(.largeTitle)
@@ -92,12 +117,21 @@ struct ContentView: View {
                         )
                         .padding()
                         HStack() {
-                            Button("✅") {
-                                self.count += 5
+                            Button(check3) {
+                                if self.isLocked3 {
+                                    self.count -= 5
+                                    self.check3 = "✅"
+                                } else {
+                                    self.count += 5
+                                    self.check3 = "    "
+                                }
+                                self.isLocked3.toggle()
                             }
                             .buttonStyle(.borderedProminent)
-                            .tint(blue)
-                            .foregroundColor(forestGreen)
+                            .tint(isLocked3 == true ? .gray : blue)
+                            .frame(
+                                width: 50
+                            )
                             NavigationLink(destination: Italy()) {
                                 Text("🇮🇹   Italy   🇮🇹")
                                     .font(.largeTitle)
@@ -117,12 +151,21 @@ struct ContentView: View {
                         )
                         .padding()
                         HStack() {
-                            Button("✅") {
-                                self.count += 5
+                            Button(check4) {
+                                if self.isLocked4 {
+                                    self.count -= 5
+                                    self.check4 = "✅"
+                                } else {
+                                    self.count += 5
+                                    self.check4 = "    "
+                                }
+                                self.isLocked4.toggle()
                             }
                             .buttonStyle(.borderedProminent)
-                            .tint(blue)
-                            .foregroundColor(forestGreen)
+                            .tint(isLocked4 == true ? .gray : blue)
+                            .frame(
+                                width: 50
+                            )
                             NavigationLink(destination: Ethiopia()) {
                                 Text("🇪🇹   Ethiopia   🇪🇹")
                                     .font(.largeTitle)

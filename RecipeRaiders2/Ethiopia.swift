@@ -75,7 +75,7 @@ struct Ethiopia: View {
               .foregroundColor(beige))
             .cornerRadius(40)
           }
-          .navigationTitle("🍲")
+          .navigationTitle("🍗")
           .navigationBarTitleDisplayMode(.inline)
           Text("           Directions            ")
             .font(.body)
@@ -98,6 +98,7 @@ struct Ethiopia: View {
           .background(Rectangle()
             .foregroundColor(beige))
           .cornerRadius(40)
+          .padding()
           Text("           Sources            ")
             .font(.body)
             .foregroundColor(forestGreen)
@@ -119,19 +120,7 @@ struct Ethiopia: View {
           .background(Rectangle()
             .foregroundColor(beige))
           .cornerRadius(40)
-          
-            
-//            NavigationLink(destination: ContentView()) {
-//            Text("Main Menu")
-//              .font(.body)
-//              .foregroundColor(forestGreen)
-//              .fontWeight(.regular)
-//              .padding()
-//              .background(Rectangle()
-//                .foregroundColor(blue))
-//              .cornerRadius(30)
-//              .padding()
-//          }
+          .padding()
         }
       }
     }
