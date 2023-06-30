@@ -13,7 +13,7 @@ struct ContentView: View {
     let forestGreen = Color(red: 0, green: 0.2, blue: 0.125)
     let blue = Color(red: 0.757, green: 0.816, blue:0.906)
     @State private var query = ""
-    
+//    @State private var btn1visibility
     @State var count: Int = 0
     var body: some View {
         NavigationStack {
@@ -22,17 +22,14 @@ struct ContentView: View {
                 ScrollView {
                     VStack(alignment: .leading){
                         Text("Current score: \(count)")
-                            .font(.title)
+                            .font(.title2)
                             .foregroundColor(forestGreen)
                             .multilineTextAlignment(.center)
-                            .padding(20)
+                            .padding()
                             .background(Rectangle()
                                 .foregroundColor(blue))
                             .cornerRadius(25)
                             .padding()
-//                        Button("Done") {
-//                            self.count += 5
-//                        }
                     }
                     VStack (spacing: 20) {
                         HStack {
@@ -42,47 +39,108 @@ struct ContentView: View {
                         .padding(10)
                         .background(Rectangle()
                             .foregroundColor(blue))
-                        
                         .cornerRadius(25)
-                        .padding()
-                        let countries = ["🇳🇵   Nepal   🇳🇵", "🇪🇨   Ecuador   🇪🇨", "🇮🇹   Italy    🇮🇹", "🇪🇹   Ethiopia   🇪🇹"]
-                        // ATTN: please don't remove this chunk of commented text, I'm trying to make it dynamically create buttons!
-//                        let files = [SecondView(), Ecuador()]
-//                        ForEach(0..<countries.count, id: \.self) { i in
-//                            NavigationLink(destination: files[i]) {
-//                                Text(countries[i])
-//                                    .font(.largeTitle)
-//                                    .foregroundColor(forestGreen)
-//                                    .padding(20)
-//                                    .background(Rectangle()
-//                                        .foregroundColor(beige))
-//                                    .cornerRadius(10)
-//                                    .padding()
-//                            }
-//                        }
-                        ForEach(countries, id: \.self) { country in
-                            HStack {
-                                
-                                Button("Done") {
+                        .padding(.horizontal)
+                        HStack() {
+                            Button("✅") {
                                 self.count += 5
-                                }
-                                .buttonStyle(.borderedProminent)
-                                .tint(blue)
-                                .foregroundColor(forestGreen)
-                            
-                                
+                            }
+                            .buttonStyle(.borderedProminent)
+                            .tint(blue)
+                            .foregroundColor(forestGreen)
                             NavigationLink(destination: SecondView()) {
-                                Text(country)
+                                Text("🇳🇵   Nepal   🇳🇵")
                                     .font(.largeTitle)
                                     .foregroundColor(forestGreen)
                                     .padding(20)
                                     .background(Rectangle()
                                         .foregroundColor(beige))
                                     .cornerRadius(10)
-                                    .padding()
-                            }
                             }
                         }
+                        .frame(
+                            minWidth: 0,
+                            maxWidth: .infinity,
+                            minHeight: 0,
+                            maxHeight: .infinity,
+                            alignment: .topLeading
+                        )
+                        .padding()
+                        HStack() {
+                            Button("✅") {
+                                self.count += 5
+                            }
+                            .buttonStyle(.borderedProminent)
+                            .tint(blue)
+                            .foregroundColor(forestGreen)
+                            NavigationLink(destination: Ecuador()) {
+                                Text("🇪🇨   Ecuador   🇪🇨")
+                                    .font(.largeTitle)
+                                    .foregroundColor(forestGreen)
+                                    .padding(20)
+                                    .background(Rectangle()
+                                        .foregroundColor(beige))
+                                    .cornerRadius(10)
+                            }
+                        }
+                        .frame(
+                            minWidth: 0,
+                            maxWidth: .infinity,
+                            minHeight: 0,
+                            maxHeight: .infinity,
+                            alignment: .topLeading
+                        )
+                        .padding()
+                        HStack() {
+                            Button("✅") {
+                                self.count += 5
+                            }
+                            .buttonStyle(.borderedProminent)
+                            .tint(blue)
+                            .foregroundColor(forestGreen)
+                            NavigationLink(destination: Italy()) {
+                                Text("🇮🇹   Italy   🇮🇹")
+                                    .font(.largeTitle)
+                                    .foregroundColor(forestGreen)
+                                    .padding(20)
+                                    .background(Rectangle()
+                                        .foregroundColor(beige))
+                                    .cornerRadius(10)
+                            }
+                        }
+                        .frame(
+                            minWidth: 0,
+                            maxWidth: .infinity,
+                            minHeight: 0,
+                            maxHeight: .infinity,
+                            alignment: .topLeading
+                        )
+                        .padding()
+                        HStack() {
+                            Button("✅") {
+                                self.count += 5
+                            }
+                            .buttonStyle(.borderedProminent)
+                            .tint(blue)
+                            .foregroundColor(forestGreen)
+                            NavigationLink(destination: Ethiopia()) {
+                                Text("🇪🇹   Ethiopia   🇪🇹")
+                                    .font(.largeTitle)
+                                    .foregroundColor(forestGreen)
+                                    .padding(20)
+                                    .background(Rectangle()
+                                        .foregroundColor(beige))
+                                    .cornerRadius(10)
+                            }
+                        }
+                        .frame(
+                            minWidth: 0,
+                            maxWidth: .infinity,
+                            minHeight: 0,
+                            maxHeight: .infinity,
+                            alignment: .topLeading
+                        )
+                        .padding()
                     }
                 }
                 .toolbar {
