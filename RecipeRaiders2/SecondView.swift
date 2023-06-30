@@ -33,7 +33,7 @@ struct SecondView: View {
               .foregroundColor(forestGreen)
               .multilineTextAlignment(.center)
           }
-          Text("           History         ")
+          Text("           Did you know?         ")
             .font(.headline)
             .foregroundColor(forestGreen)
             .fontWeight(.regular)
